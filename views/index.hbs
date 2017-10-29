@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--metas-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Rodrigo Martinez">
+    <meta name="description" content="Resolucion de problemas por metodo grafico">
+
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <!-- Titulo -->
+    <title>Simplex Method</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="static/css/normalize.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/custom.css">
+    <link href="static/dist/css/select2.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="static/img/GraphicMethod-favicon.png">
+
+</head>
+
+<body>
+    <section class="container-fluid bg_gray">
+    {{> header}}
+    </section>
+    <!-- HEADER-->
+    <!--container informacion-->
+    <section class="container">
+        <div class="introduccion">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="titulo_introduccion2">The Graphic Method consist in solve linear programming problems, taking advantage of the linear functions, using two decision variables with their different constraints to give us a factible region and then look for an optimal solution.</p><br>
+                    <p class="titulo_introduccion2">This program use the objective function and the constraints to make a graphical solution to your problem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Termina container de informacion-->
+
+    <section class="container-fluid bgblue">
+    <!--objective function-->
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <h1 class="titulo_introduccion">Objective function</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <p class="instrucciones">Select the optimal function</p>
+            <select name="g1" id="select_obj" class="select_oe">
+                <option value="-1">Maximize</option>
+                <option value="1">Minimize</option>          
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 offset-md-1"><br>
+            <input type="hidden" name="count-variables" value="1" />
+            <div class="control-group" id="fields-variables">
+                <div class="controls" id="profs">
+                    <p class="instrucciones">Number of variables</p>
+                    <div class="input-group">
+                        <span class="input-group-addon">1</span>
+                        <input autocomplete="off" class="span2" id="variable1" name="variable1" type="number" step="0.01" placeholder="Variable"/>
+                        <span class="variable_obj" id="field-variable">&nbsp;X1</span>
+                        <button id="b1" class="btn add-more-variable glyphicon glyphicon-plus" type="button">+</button>
+                        <button id="b2" class="btn btn-danger remove-one-variable glyphicon-minus" type="button">-</button>
+                    </div>
+                    <p class="instrucciones">Press + to add another constraint and - to remove it</p>
+                    <p class="instrucciones">Maximum 10 Constraints</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End objective function-->
+
+    <!--Constrains-->
+    <div class="row-fluid">
+        <div class="span 3">
+            <h1 class="titulo_introduccion">Number of constraints</h1>
+        </div>
+    </div>
+    <div class="row offset2">
+        <input type="hidden" name="count" value="1" />
+        <div class="control-group" id="fields">
+            <div class="controls" id="profs"> 
+                <div class="input-group">
+                    <span class="input-group-addon">1</span>
+                    <input autocomplete="off" class="span2" id="fieldx1" name="profx1" type="number" step="0.01" placeholder="Multiply X"/>
+                    <span class="variable_obj">&nbsp;X</span><span class="variable_obj">&nbsp;+ </span>
+                    <input autocomplete="off" class="span2" id="fieldy1" name="profy1" type="number" step="0.01" placeholder="Multiply Y"/>
+                    <span class="variable_obj">&nbsp;Y </span>
+                    <select id="option1" class="select_oe select_constraints">
+                        <option value="-1">>=</option>
+                        <option value="1">>=</option>
+                        <option value="0">=</option>
+                    </select>
+                    <input autocomplete="off" class="span2" id="field1" name="con1" type="number" step="0.01" placeholder="Condition"/>
+                    <button id="b1" class="btn add-more glyphicon glyphicon-plus" type="button">+</button><button id="b2" class="btn btn-danger remove-one" type="button">-</button>
+                </div>
+            <br>
+            <p class="instrucciones">x, y ≥ 0</p>
+            <p class="instrucciones">Press + to add another constraint and - to remove it</p>
+            <p class="instrucciones">Maximum 10 Constraints</p>
+            </div>
+        </div>
+    </div>
+    <!--End Constraints-->
+
+
+    <div class="row-fluid">
+        <div class="offset1">
+            <input type="button" href="#solve-div" class="botonGris span3" id="btn-solve" value="Continue">
+        </div>
+    </div>
+
+     <div class="container_result bgblue row" id="solve-div">
+        
+    </div>
+
+    <!--<div class="row" style="margin-top:50px;">
+       
+    </div>-->
+    </section>
+    
+    {{> footer}}
+     <!-- Bootstrap -->
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/addInput.js"></script>
+    <script src="static/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+		$(".select_oe").select2({
+		  allowClear: true
+		});;
+	</script>
+</body>
+</html>
