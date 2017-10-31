@@ -147,29 +147,32 @@ $(document).ready(function() {
 
 
     var nextv = 1;
-    $(".add-more-variable").click(function(e) {
+    $(".add-variable").click(function(e) {
         if (nextv < 10) {
             e.preventDefault();
             var addto = "#field-variable" + nextv;
+            console.log('Prueba' + nextv);
             nextv = nextv + 1;
-            var newIn = '<br class="remove-me-variable' + nextv + '"/><br class="remove-me-variable' + nextv + '"/><span class="input-group-addon remove-me-variable' 
-            + nextv + '">' + nextv + '</span><input autocomplete="off" class="span2 remove-me-variable' + nextv + '" id="variable' + nextv 
-            + '" name="variable' + nextv + '" type="number" step="0.01" placeholder="Variable"><span class="variable_obj">&nbsp;X' + nextv + '</span>';
+            var newIn = '<div class="input-group" id="field-variable' + nextv + '"><p class="remove-variable-me' + nextv + '"></p><p class="remove-variable-me' + nextv + '"></p><span class="input-group-addon remove-variable-me' 
+            + nextv + '">' + nextv + '</span><input autocomplete="off" class="span2 remove-variable-me' + nextv + '" id="variable' + nextv 
+            + '" name="variable' + nextv + '" type="number" step="0.01" placeholder="Variable"><span class="variable_obj remove-variable-me" id="field-variable' + nextv + '">&nbsp;X' + nextv + '</span></div>';
             var newInput = $(newIn);
             $(addto).after(newInput);
             //$("#field" + nextv).attr('data-source', $(addto).attr('data-source'));
             $("#count-variables").val(nextv);
+            console.log(nextv);
         }
     });
 
-    $(".remove-one-variable").click(function(e) {
+    $(".remove-variable").click(function(e) {
         if (nextv > 1) {
             e.preventDefault();
             var addto = "#field-variable" + nextv;
             $("#field-variable" + nextv).remove();
-            $(".remove-me-variable" + nextv).remove();
+            $(".remove-variable-me" + nextv).remove();
             nextv = nextv - 1;
             $("#count-variables").val(nextv);
+            console.log(nextv);
         }
     });
 

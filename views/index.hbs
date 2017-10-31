@@ -68,15 +68,16 @@
             <div class="control-group" id="fields-variables">
                 <div class="controls" id="profs">
                     <p class="instrucciones">Number of variables</p>
-                    <div class="input-group">
+                    <div class="input-group" id="field-variable1">
                         <span class="input-group-addon">1</span>
                         <input autocomplete="off" class="span2" id="variable1" name="variable1" type="number" step="0.01" placeholder="Variable"/>
-                        <span class="variable_obj" id="field-variable">&nbsp;X1</span>
-                        <button id="b1" class="btn add-more-variable glyphicon glyphicon-plus" type="button">+</button>
-                        <button id="b2" class="btn btn-danger remove-one-variable glyphicon-minus" type="button">-</button>
+                        <span class="variable_obj">&nbsp;X1</span>
                     </div>
-                    <p class="instrucciones">Press + to add another constraint and - to remove it</p>
-                    <p class="instrucciones">Maximum 10 Constraints</p>
+                    <button id="b1" class="btn add-variable glyphicon glyphicon-plus" type="button">+</button>
+                    <button id="b2" class="btn btn-danger remove-variable glyphicon-minus" type="button">-</button>
+                    <br>
+                    <p class="instrucciones">Press + to add another variable and - to remove it</p>
+                    <p class="instrucciones">Maximum 10 Variables</p>
                 </div>
             </div>
         </div>
