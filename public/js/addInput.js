@@ -148,7 +148,7 @@ $(document).ready(function() {
 
     var nextv = 1;
     $(".add-variable").click(function(e) {
-        if (nextv < 10) {
+        if (nextv < 15) {
             e.preventDefault();
             var addto = "#field-variable" + nextv;
             console.log('Prueba' + nextv);

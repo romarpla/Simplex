@@ -95,7 +95,7 @@
         <div class="control-group" id="fields">
             <div class="controls" id="profs"> 
                 <div class="input-group">
-                    <span class="input-group-addon">1</span>
+                    <span class="input-group-addon" >1</span>
                     <input autocomplete="off" class="span2" id="fieldx1" name="profx1" type="number" step="0.01" placeholder="Multiply X"/>
                     <span class="variable_obj">&nbsp;X</span><span class="variable_obj">&nbsp;+ </span>
                     <input autocomplete="off" class="span2" id="fieldy1" name="profy1" type="number" step="0.01" placeholder="Multiply Y"/>
@@ -106,12 +106,13 @@
                         <option value="0">=</option>
                     </select>
                     <input autocomplete="off" class="span2" id="field1" name="con1" type="number" step="0.01" placeholder="Condition"/>
-                    <button id="b1" class="btn add-more glyphicon glyphicon-plus" type="button">+</button><button id="b2" class="btn btn-danger remove-one" type="button">-</button>
                 </div>
-            <br>
-            <p class="instrucciones">x, y ≥ 0</p>
-            <p class="instrucciones">Press + to add another constraint and - to remove it</p>
-            <p class="instrucciones">Maximum 10 Constraints</p>
+                <button id="b1" class="btn add-more glyphicon glyphicon-plus" type="button">+</button>
+                <button id="b2" class="btn btn-danger remove-one" type="button">-</button>
+                <br>
+                <p class="instrucciones">x, y ≥ 0</p>
+                <p class="instrucciones">Press + to add another constraint and - to remove it</p>
+                <p class="instrucciones">Maximum 10 Constraints</p>
             </div>
         </div>
     </div>
@@ -135,6 +136,7 @@
     
     {{> footer}}
      <!-- Bootstrap -->
+    <script src="static/js/bootstrap.js"></script>
     <script src="static/js/bootstrap.js"></script>
     <script src="static/js/addInput.js"></script>
     <script src="static/dist/js/select2.min.js"></script>
