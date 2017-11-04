@@ -82,18 +82,18 @@ $(document).ready(function() {
 
     var next = 1;
     $(".add-more").click(function(e) {
-        if (next < 10) {
+        if (next < 15) {
             e.preventDefault();
             var addto = "#field" + next;
             next = next + 1;
-            var newIn = '<br class="remove-me' + next + '"/><br class="remove-me' + next + '"/><span class="input-group-addon remove-me' 
+            var newIn = '<div class="input-group" id="field' + next + '"><p class="remove-me' + next + '"></p><p class="remove-me' + next + '"></p><span class="input-group-addon remove-me' 
             + next + '">' + next + '</span><input autocomplete="off" class="span2 remove-me' + next + '" id="fieldx' + next 
             + '" name="fieldx' + next + '" type="number" step="0.01" placeholder="Mutiply X"><span class="variable_obj remove-me' 
             + next + '">&nbsp;X</span><span class="variable_obj remove-me' + next + '">&nbsp;+ </span><input autocomplete="off" class="span2 remove-me' 
             + next + '" id="fieldy' + next + '" name="fieldy' + next + '" type="number" step="0.01" placeholder="Mutiply Y"><span class="variable_obj remove-me' 
-            + next + '">&nbsp;Y </span> <select class="select_constraints remove-me' + next + '" id="option' + next 
-            + '"><option value="-1"><=</option><option value="1">>=</option><option value="0">=</option></select><input autocomplete="off" class="span2" id="field'
-            + next + '" name="con' + next +'" type="number" step="0.01" placeholder="Condition"/>';
+            + next + '">&nbsp;Y&nbsp; </span> <select class="select_constraints remove-me' + next + '" id="option' + next 
+            + '"><option value="-1"><=</option><option value="1">>=</option><option value="0">=</option></select><input autocomplete="off" class="span2 remove-me" name="con' 
+            + next +'" type="number" step="0.01" placeholder="Condition"/></div>';
             var newInput = $(newIn);
             $(addto).after(newInput);
             //$("#field" + next).attr('data-source', $(addto).attr('data-source'));
@@ -151,7 +151,7 @@ $(document).ready(function() {
         if (nextv < 15) {
             e.preventDefault();
             var addto = "#field-variable" + nextv;
-            console.log('Prueba' + nextv);
+            //console.log('Prueba' + nextv);
             nextv = nextv + 1;
             var newIn = '<div class="input-group" id="field-variable' + nextv + '"><p class="remove-variable-me' + nextv + '"></p><p class="remove-variable-me' + nextv + '"></p><span class="input-group-addon remove-variable-me' 
             + nextv + '">' + nextv + '</span><input autocomplete="off" class="span2 remove-variable-me' + nextv + '" id="variable' + nextv 
