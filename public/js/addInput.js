@@ -161,6 +161,12 @@ $(document).ready(function() {
             //$("#field" + nextv).attr('data-source', $(addto).attr('data-source'));
             $("#count-variables").val(nextv);
             console.log(nextv);
+            addto = "#vc_label" + (nextv-1);
+            newIn = '<span class="variable_obj remove-variable-me' + nextv + '">&nbsp;+ <input autocomplete="off" class="span2 constraint remove-variable-me' + nextv + '" id="vc' 
+            + nextv + '" name="vc' + nextv + '" type="number" step="0.01" placeholder="Constraint"/><span class="variable_obj remove-variable-me' + nextv + '" id="vc_label' + nextv +
+            '">&nbsp;X' + nextv +'&nbsp; </span>';
+            newInput = $(newIn);
+            $(addto).after(newInput);
         }
     });
 
