@@ -88,6 +88,7 @@ $(document).ready(function() {
             var clone = div.cloneNode(true);
             next = next + 1;
             clone.id = 'field' + next;
+            //clone.children('.input-group-addon').attr('innerHTML','2');
             var newInput = $(clone);
             $(div).after(newInput);
             //$("#field" + next).attr('data-source', $(addto).attr('data-source'));
