@@ -84,18 +84,12 @@ $(document).ready(function() {
     $(".add-more").click(function(e) {
         if (next < 15) {
             e.preventDefault();
-            var addto = "#field" + next;
+            var div = document.getElementById('field' + next);
+            var clone = div.cloneNode(true);
             next = next + 1;
-            var newIn = '<div class="input-group" id="field' + next + '"><p class="remove-me' + next + '"></p><p class="remove-me' + next + '"></p><span class="input-group-addon remove-me' 
-            + next + '">' + next + '</span><input autocomplete="off" class="span2 remove-me' + next + '" id="fieldx' + next 
-            + '" name="fieldx' + next + '" type="number" step="0.01" placeholder="Mutiply X"><span class="variable_obj remove-me' 
-            + next + '">&nbsp;X</span><span class="variable_obj remove-me' + next + '">&nbsp;+ </span><input autocomplete="off" class="span2 remove-me' 
-            + next + '" id="fieldy' + next + '" name="fieldy' + next + '" type="number" step="0.01" placeholder="Mutiply Y"><span class="variable_obj remove-me' 
-            + next + '">&nbsp;Y&nbsp; </span> <select class="select_constraints remove-me' + next + '" id="option' + next 
-            + '"><option value="-1"><=</option><option value="1">>=</option><option value="0">=</option></select><input autocomplete="off" class="span2 remove-me" name="con' 
-            + next +'" type="number" step="0.01" placeholder="Condition"/></div>';
-            var newInput = $(newIn);
-            $(addto).after(newInput);
+            clone.id = 'field' + next;
+            var newInput = $(clone);
+            $(div).after(newInput);
             //$("#field" + next).attr('data-source', $(addto).attr('data-source'));
             $("#count").val(next);
         }
@@ -160,10 +154,10 @@ $(document).ready(function() {
             $(addto).after(newInput);
             //$("#field" + nextv).attr('data-source', $(addto).attr('data-source'));
             $("#count-variables").val(nextv);
-            console.log(nextv);
-            addto = "#vc_label" + (nextv-1);
-            newIn = '<span class="variable_obj remove-variable-me' + nextv + '">&nbsp;+ <input autocomplete="off" class="span2 constraint remove-variable-me' + nextv + '" id="vc' 
-            + nextv + '" name="vc' + nextv + '" type="number" step="0.01" placeholder="Constraint"/><span class="variable_obj remove-variable-me' + nextv + '" id="vc_label' + nextv +
+            console.log('variables ' + nextv);
+            addto = ".vc_label" + (nextv-1);
+            newIn = '<span class="variable_obj remove-variable-me' + nextv + '">&nbsp;+</span> <input autocomplete="off" class="span2 constraint remove-variable-me' + nextv + '" id="vc' 
+            + nextv + '" name="vc' + nextv + '" type="number" step="0.01" placeholder="Constraint"/><span class="variable_obj remove-variable-me' + nextv + ' vc_label' + nextv +
             '">&nbsp;X' + nextv +'&nbsp; </span>';
             newInput = $(newIn);
             $(addto).after(newInput);
@@ -178,7 +172,7 @@ $(document).ready(function() {
             $(".remove-variable-me" + nextv).remove();
             nextv = nextv - 1;
             $("#count-variables").val(nextv);
-            console.log(nextv);
+            //console.log(nextv);
         }
     });
 
