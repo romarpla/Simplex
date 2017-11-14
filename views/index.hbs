@@ -48,7 +48,28 @@
     <!--Termina container de informacion-->
 
     <section class="container-fluid bgblue">
-    <!--objective function-->
+    
+    <!--Set inputs-->
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <h1 class="titulo_introduccion">Select inputs</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <p class="instrucciones">Number of variables
+                <input autocomplete="off" id="numvar" name="numvar" type="number" step="1" placeholder="Variables"/>
+            </p>
+            <p class="instrucciones">Number of constraints
+                <input autocomplete="off" id="numcon" name="numcon" type="number" step="1" placeholder="Constraints"/>
+            </p>
+            <button id="buttoninput" class="button" type="button"><span>Continue</span></button>
+        </div>
+    </div>
+    <!--Final set inputs-->
+    
+    
+    <!--objective function
     <div class="row">
         <div class="col-md-11 offset-md-1">
             <h1 class="titulo_introduccion">Objective function</h1>
@@ -79,13 +100,14 @@
                     <br>
                     <p class="instrucciones">Press + to add another variable and - to remove it</p>
                     <p class="instrucciones">Maximum 10 Variables</p>
+                    <button id="buttonvariables" class="button" type="button"><span>Continue</span></button>
                 </div>
             </div>
         </div>
     </div>
-    <!--End objective function-->
+    End objective function-->
 
-    <!--Constrains-->
+    <!--Constrains
     <div class="row">
         <div class="col-md-11 offset-md-1">
             <h1 class="titulo_introduccion">Number of constraints</h1>
@@ -97,12 +119,12 @@
             <div class="control-group" id="fields">
                 <div class="controls" id="profs"> 
                     <div class="input-group" id="field1">
-                        <span class="input-group-addon">1</span>
-                        <input autocomplete="off" class="span2 constraint" id="vc1" name="vc1" type="number" step="0.01" placeholder="Constraint"/>
+                        <span class="input-group-addon">1</span> 
+                        <input autocomplete="off" class="span2 constraint" id="vc1_1" name="vc1_1" type="number" step="0.01" placeholder="Constraint"/>
                         <span class="variable_obj vc_label1">&nbsp;X1 </span>
                         <select id="option1" class="select_constraints">
                             <option value="-1">>=</option>
-                            <option value="1">>=</option>
+                            <option value="1"><=</option>
                             <option value="0">=</option>
                         </select>
                         <input autocomplete="off" class="span2 constraint"  name="con1" type="number" step="0.01" placeholder="Condition"/>
@@ -117,16 +139,10 @@
             </div>
         </div>
     </div>    
-    <!--End Constraints-->
+    End Constraints-->
 
 
-    <div class="row-fluid">
-        <div class="offset1">
-            <input type="button" href="#solve-div" class="botonGris span3" id="btn-solve" value="Continue">
-        </div>
-    </div>
-
-     <div class="container_result bgblue row" id="solve-div">
+    <div class="container_result bgblue row" id="solve-div">
         
     </div>
 

@@ -80,7 +80,20 @@ $(document).ready(function() {
         }
     }
 
-    var next = 1;
+
+    /*Building input fields*/
+    $("#buttoninput").click(function(e){
+        var numvar = document.getElementById('numvar');
+        numvar = numvar.value;
+        var numcon = document.getElementById('numcon');
+        numcon = numcon.value;
+        for(var i = 1; i<=numvar; i++){
+
+        }
+    });
+    /*End input fields*/
+
+    /*var next = 1;
     $(".add-more").click(function(e) {
         if (next < 15) {
             e.preventDefault();
@@ -89,6 +102,7 @@ $(document).ready(function() {
             next = next + 1;
             clone.id = 'field' + next;
             $(clone).find(".input-group-addon").html(next);
+            $(clone).find(".constraint").id('_' + next);
             var newInput = $(clone);
             $(div).after(newInput);
             //$("#field" + next).attr('data-source', $(addto).attr('data-source'));
@@ -175,6 +189,6 @@ $(document).ready(function() {
             $("#count-variables").val(nextv);
             //console.log(nextv);
         }
-    });
+    });*/
 
 });
