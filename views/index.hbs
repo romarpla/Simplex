@@ -63,12 +63,48 @@
             <p class="instrucciones">Number of constraints
                 <input autocomplete="off" id="numcon" name="numcon" type="number" step="1" placeholder="Constraints"/>
             </p>
+            <p class="instrucciones">Maximum 15 Variables</p>
+            <p class="instrucciones">Maximum 15 Constraints</p>
             <button id="buttoninput" class="button" type="button"><span>Continue</span></button>
         </div>
     </div>
     <!--Final set inputs-->
+
+    <!--Objective function and constraints-->
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <h1 class="titulo_introduccion">Objective function</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <p class="instrucciones">Select the optimal function</p>
+            <select name="g1" id="select_obj" class="select_oe">
+                <option value="-1">Maximize</option>
+                <option value="1">Minimize</option>          
+            </select>
+        </div>
+    </div>
+    <div class="row"> <!--here will be the variables-->
+        <div class="col-md-11 offset-md-1" id="variable_fields">
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <h1 class="titulo_introduccion">Constraints</h1>
+        </div>
+    </div>
+    <div class="row"> <!--here will be the constraints-->
+        <div class="col-md-11 offset-md-1" id="constraint_fields">
+            
+        </div>
+    </div>
+    <!--Final Objective function and constraints-->
     
     
+
     <!--objective function
     <div class="row">
         <div class="col-md-11 offset-md-1">

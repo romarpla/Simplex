@@ -87,9 +87,51 @@ $(document).ready(function() {
         numvar = numvar.value;
         var numcon = document.getElementById('numcon');
         numcon = numcon.value;
-        for(var i = 1; i<=numvar; i++){
-
+        if(numvar > 15 || numvar < 1)
+        {
+            alert("Variables not valid number");
         }
+        if(numcon > 15 || numcon < 1)
+        {
+            alert("Constraints not valid number");
+        }
+        /*Variables*/
+        var i = 1;
+        var newVar = '';
+        for(i = 1; i<=numvar-1; i++){
+            newVar = newVar + '<input autocomplete="off" class="variable" id="variable' + i + '" name="variable' + i + '" type="number" step="0.01" placeholder="Variable"/>'
+            + '<span class="variable_obj">&nbsp;X' + i + '</span><span class="variable_obj">&nbsp;+</span>';
+        }
+        newVar = newVar + '<input autocomplete="off" class="variable" id="variable' + numvar + '" name="variable' + numvar + '" type="number" step="0.01" placeholder="Variable"/>'
+        + '<span class="variable_obj">&nbsp;X' + numvar + '</span>';
+        var divVar = document.createElement('div');   
+        divVar.innerHTML = newVar;
+        document.getElementById('variable_fields').appendChild(divVar); 
+        /*End Variables*/
+        /*Constraints*/
+        var i = 1;
+        var j = 1;
+        var newCon = '';
+        for(j = 1;j <= numcon; j++)
+        {
+            newCon = newCon + '<div>';
+            for(i = 1;i <= numvar - 1; i++)
+            {
+                newCon = newCon + '<input autocomplete="off" class="span2 constraint" id="vc'+i+'_'+j+'" name="vc'+i+'_'+j+'" type="number" step="0.01" placeholder="Constraint"/>'+
+                '<span class="variable_obj">&nbsp;X'+i+' </span><span class="variable_obj">&nbsp;+</span>';
+            }
+            newCon = newCon + '<input autocomplete="off" class="span2 constraint" id="vc'+numvar+'_'+j+'" name="vc'+numvar+'_'+j+'" type="number" step="0.01" placeholder="Constraint"/>'+
+            '<span class="variable_obj">&nbsp;X'+numvar+' </span>';
+            newCon = newCon + '<select id="option'+j+'" class="select_constraints">'+
+            '<option value="-1">>=</option>'+
+            '<option value="1"><=</option>'+
+            '<option value="0">=</option>'+
+            '</select>'+
+            '<input autocomplete="off" class="span2 constraint"  name="con'+j+'" type="number" step="0.01" placeholder="Condition"/></div>';
+        }
+        var divCon = document.createElement('div');   
+        divCon.innerHTML = newCon;
+        document.getElementById('constraint_fields').appendChild(divCon); 
     });
     /*End input fields*/
 
